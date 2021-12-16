@@ -1,0 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  //  CLIENT_HOSTNAME = 'paloit2016.sharepoint.com'
+    CLIENT_HOSTNAME = 'bb121-7-156-142.singnet.com.sg';
+    REDIRECTED_SITE = 'http://www.google.com';
+    $.get(
+        "https://ipinfo.io", 
+        function(response) {
+            if (!response.hostname || !response.hostname.includes(CLIENT_HOSTNAME))
+                window.location.replace(REDIRECTED_SITE);
+        }, 
+        "json"
+    );
+</script>
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+    intent="WELCOME"
+    chat-title="FoodOrderAgent"
+    agent-id="ca25dbc5-a7dd-417c-bbfa-9b19ea322043"
+    language-code="en">
+</df-messenger>
